@@ -1,11 +1,9 @@
-# Advocacy Workshop
+# Presto Workshop
 
-This is a template for workshops hosted on GitHub Pages using Material for MkDocs. To view it online, go to:
+This is a repo that hosts the materials for the Presto workshop. You can view the workshop
+[here](https://yhwang.github.io/presto-intro)
 
-<https://ibm.github.io/repo-name>
-
-Create a new repo based off this template, and use the following folders as a guide:
-
+Here is the file structure of this repo:
 ```ini
 
 - data (any data (CSV, JSON, etc files) to be used)
@@ -20,13 +18,6 @@ Create a new repo based off this template, and use the following folders as a gu
 README.md (only used for GitHub.com)
 ```
 
-## Tips and conventions
+## Authors
+- Yihong Wang yh.wang@ibm.com
 
-### Screenshots
-
-Screenshots look better if they are full page.
-Use [ImageMagick](https://imagemagick.org) to create a nice border around images with this command:
-
-```bash
-magick mogrify -bordercolor gray -border 2
-```
