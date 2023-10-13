@@ -4,8 +4,9 @@ This workshop uses [Docker](https://docs.docker.com/) to set up a Presto cluster
 And it uses [Docker Compose](https://docs.docker.com/compose/) to running them all together.
 
 Please follow the installation links below to set up your working environment:
-1. [Docker]()https://docs.docker.com/engine/install/
-1. [Docker Compose](https://docs.docker.com/desktop/install/linux-install/)
+
+* [Docker](https://docs.docker.com/engine/install/)
+* [Docker Compose](https://docs.docker.com/desktop/install/linux-install/)
 
 
 ## Clone the workshop repository

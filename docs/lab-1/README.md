@@ -1,6 +1,6 @@
-# Exercise Title
+# Introduction
 
-Description goes here.
+Presto is a fast and reliable SQL query engine for data analytics and the open lakehouse. 
 
 This section is comprised of the following steps:
 

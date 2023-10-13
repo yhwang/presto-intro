@@ -1,10 +1,11 @@
 # Introduction
 
-## Presto Workshop 101
+## Presto Workshop - Building an Open Data Lakehouse with Presto
 
 Welcome to our workshop! In this workshop, you’ll learn the basics of Presto, the open-source SQL query engine.
 You’ll get Presto running locally on your machine, connect data sources, and run some queries.
 This is a beginner-level workshop for software developers and engineers who are new to Presto.
+At the end of the workshop, you will understand how to federate queries using Presto. 
 
 The goals of this workshop are:
 
@@ -28,13 +29,19 @@ The introductory page of the workshop is broken down into the following sections
 |  |  |
 | :--- | :--- |
 | [Lab 0: Prerequisite](prerequisite/README.md) | Prerequisites for the workshop |
-| [Lab 1: Some Title](lab-1/README.md) | Exercise to do the thing |
+| [Lab 1: Instruction](lab-1/README.md) | Presto Instruction |
+| [Lab 2: Set up Presto](lab-2/README.md) | Set up a Presto cluster with 1 coordinator and 3 workers |
+| [Lab 3: Set up Data Sources](lab-3/README.md) | Set up 2 data source - MySQL and MongoDB |
+| [Lab 4: Connect to Data Sources](lab-4/README.md) | Set up 2 catalogs to connect to MySQL and MongoDB |
+| [Lab 5: Dashboard](lab-5/README.md) | Visualize the data |
 
 ## Compatibility
 
 This workshop has been tested on the following platforms:
 
-* **osName**: version X, version Y
+* **Linux**: Ubuntu 22.04
+* **MacOS**
+* **Windows**
 
 ## Technology Used
 
