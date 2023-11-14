@@ -28,12 +28,12 @@ The introductory page of the workshop is broken down into the following sections
 
 |  |  |
 | :--- | :--- |
-| [Lab 0: Prerequisite](prerequisite/README.md) | Prerequisites for the workshop |
-| [Lab 1: Instruction](lab-1/README.md) | Presto Instruction |
-| [Lab 2: Set up Presto](lab-2/README.md) | Set up a Presto cluster with 1 coordinator and 3 workers |
-| [Lab 3: Set up Data Sources](lab-3/README.md) | Set up 2 data source - MySQL and MongoDB |
-| [Lab 4: Connect to Data Sources](lab-4/README.md) | Set up 2 catalogs to connect to MySQL and MongoDB |
-| [Lab 5: Dashboard](lab-5/README.md) | Visualize the data |
+| [Prerequisite](prerequisite/README.md) | Prerequisites for the workshop |
+| [Instruction](introduction/README.md) | Presto Instruction |
+| [Lab 1: Set up Presto](lab-1/README.md) | Set up a Presto cluster with 1 coordinator and 3 workers |
+| [Lab 2: Set up Data Sources](lab-2/README.md) | Set up 2 data source - MySQL and MongoDB |
+| [Lab 3: Connect to Data Sources](lab-3/README.md) | Set up 2 catalogs to connect to MySQL and MongoDB |
+| [Lab 4: Dashboard](lab-4/README.md) | Visualize the data |
 
 ## Compatibility
 
@@ -45,8 +45,12 @@ This workshop has been tested on the following platforms:
 
 ## Technology Used
 
-* Brief Description
+* [Docker](https://www.docker.com/): A container engine to run several applications in self-contained containers.
+* [Presto](https://prestodb.io/): Fast and Reliable SQL Engine for Data Analytics and the Open Lakehouse
+* [MySQL](https://www.mysql.com/): A popular open-source relational database management system
+* [MongoDB](https://www.mongodb.com/): A document-oriented database
 
 ## Credits
 
+* [Kiersten Stokes](https://github.com/kiersten-stokes)
 * [Yihong Wang](https://github.com/yhwang)
