@@ -22,18 +22,23 @@ First, let's learn how to run Presto CLI to connect to the coordinator. There ar
 For this lab, since we run everything on Docker containers, we are going to use the second approach. You also have two ways
 to do this:
 
-1. Run the `presto-cli` inside the coordinator container
-   ```sh
-   $ docker exec -ti coordinator /opt/presto-cli
-   presto>
-   ```
-1. Run the `presto-cli` with a dedicated container and connect to the coordinator. 
-   ```sh
-   $ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
-     -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
-     --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
-   presto>
-   ```
+Run the `presto-cli` inside the coordinator container
+```sh
+$ docker exec -ti coordinator /opt/presto-cli
+presto>
+```
+
+!!! note
+    Since the `presto-cli` is executed inside the `coordinator` and `localhost:8080` is the default server,
+    no need to specify the `--server` argument.
+
+Or run the `presto-cli` with a dedicated container and connect to the coordinator. 
+```sh
+$ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
+    -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
+    --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
+presto>
+```
 
 After you run the command after the shell prompt, the dollar sign, you should get the `presto>` CLI prompt. Then you can run
 this SQL - `show catalogs` to get currently configured catalogs:
@@ -166,6 +171,10 @@ Let's run some SQLs to verify the MySQL and MongoDB data sources:
   Splits: 17 total, 17 done (100.00%)
   [Latency: client-side: 381ms, server-side: 365ms] [4 rows, 112B] [10 rows/s, 306B/s]
   ```
+!!! note
+    You may run this command `use mongodb.presto_to_mongodb;` to switch to the `mongodb` catalog
+    and use `presto_to_mongodb` as the default schema. Then use `book` in the SQL instead of
+    `mongodb.presto_to_mangodb.book`.
 - List the schemas in MySQL:
   ```
   presto> show schemas in mysql;
