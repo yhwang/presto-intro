@@ -14,27 +14,30 @@ This section is comprised of the following steps:
 ## 1. Data Source Connectors
 
 First, let's learn how to run Presto CLI to connect to the coordinator. There are several ways to do that:
+
 1. Download the executable jar from the official repository and run the jar file with a proper JVM.
   You can see details in this [documentation](http://prestodb.io/docs/current/installation/cli.html#install-the-presto-cli).
 1. Use the `presto-cli` that comes with the `prestodb/presto` Docker image
 
 For this lab, since we run everything on Docker containers, we are going to use the second approach. You also have two ways
 to do this:
+
 1. Run the `presto-cli` inside the coordinator container
    ```sh
-   $ docker exec -ti coordinator presto-cli
+   $ docker exec -ti coordinator /opt/presto-cli
    presto>
    ```
 1. Run the `presto-cli` with a dedicated container and connect to the coordinator. 
    ```sh
    $ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
      -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
-     --entrypoint presto-cli prestodb/presto:0.284 --server coordinator:8080
+     --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
    presto>
    ```
 
 After you run the command after the shell prompt, the dollar sign, you should get the `presto>` CLI prompt. Then you can run
 this SQL - `show catalogs` to get currently configured catalogs:
+
 ```
 presto> show catalogs;
  Catalog
@@ -55,6 +58,7 @@ presto>
 
 These are the catalogs that we set when launching the coordinator and worker containers by using the configurations
 from the `./catalog` directory.
+
 - [jmx](http://prestodb.io/docs/current/connector/jmx.html): The JMX connector provides the ability to query JMX
   information from all nodes in a Presto cluster.
 - [memory](http://prestodb.io/docs/current/connector/memory.html): The Memory connector stores all data and metadata
@@ -74,6 +78,7 @@ Adding new catalogs to Presto servers is quite simple. You just need to create t
 
 For the MySQL database, you can find the following content in the `./catalog-new/mysql.properties` file. It contains
 the information about the MySQL database we set up earlier.
+
 ```
 connector.name=mysql
 connection-url=jdbc:mysql://presto-mysql:3306
@@ -84,6 +89,7 @@ connection-password=presto
 
 For the MongoDB, you can find the following content in the `./catalog-new/mongo.properties` file. It contains
 the information about the MongoDB we set up earlier:
+
 ```
 connector.name=mongodb
 mongodb.seeds=presto-mongo:27017
@@ -91,6 +97,7 @@ mongodb.seeds=presto-mongo:27017
 
 To apply these two new catalog property files, you just need to copy them to the `./catalog` directory and restart the
 `coordinator`, `worker1`, `worker2`, and `worker3` containers:
+
 ```sh
 cp ./catalog-new/* ./catalog/
 docker restart coordinator worker1 worker2 worker3
@@ -98,8 +105,11 @@ docker restart coordinator worker1 worker2 worker3
 
 This will restart all four containers sequentially. When the command finishes, you can run the Presto CLI to verify the
 new data sources we added.
+
 ```sh
-$ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network --entrypoint presto-cli prestodb/presto:0.284 --server coordinator:8080
+$ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
+  -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config --net presto_network \
+  --entrypoint /opt/presto-cli prestodb/presto:0.284 --server coordinator:8080
 presto> show catalogs;
  Catalog
 ---------
