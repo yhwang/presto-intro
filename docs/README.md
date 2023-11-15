@@ -29,7 +29,7 @@ The introductory page of the workshop is broken down into the following sections
 |  |  |
 | :--- | :--- |
 | [Prerequisite](prerequisite/README.md) | Prerequisites for the workshop |
-| [Instruction](introduction/README.md) | Presto Instruction |
+| [Introduction](introduction/README.md) | Presto Introduction |
 | [Lab 1: Set up Presto](lab-1/README.md) | Set up a Presto cluster with 1 coordinator and 3 workers |
 | [Lab 2: Set up Data Sources](lab-2/README.md) | Set up 2 data source - MySQL and MongoDB |
 | [Lab 3: Connect to Data Sources](lab-3/README.md) | Set up 2 catalogs to connect to MySQL and MongoDB |

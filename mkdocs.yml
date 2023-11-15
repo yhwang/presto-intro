@@ -14,7 +14,7 @@ nav:
     - About the workshop: README.md
   - Workshop:
     - Prerequisite: prerequisite/README.md
-    - Intorduction: introduction/README.md
+    - Introduction: introduction/README.md
     - Lab 1. Set up Presto: lab-1/README.md
     - Lab 2. Data Sources: lab-2/README.md
     - Lab 3. Add Catalogs: lab-3/README.md

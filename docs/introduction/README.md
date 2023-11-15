@@ -35,8 +35,11 @@ In the [Installation](http://prestodb.io/docs/current/installation.html) section
 simple configurations.
 
 In this workshop, you will use docker to spin up
+
 - A Presto cluster using a coordinator and 3 workers
 - A MySQL server with simple data
 - A MongoDB with simple data
+
+![presto diag](../images/lab-architecture.png)
 
 Without further ado, let's get started.
