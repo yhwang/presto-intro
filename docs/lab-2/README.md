@@ -4,10 +4,10 @@ In this section, you will set up MongoDB and MySQL as the data sources.
 
 This section is comprised of the following steps:
 
-1. [Set Up MongoDB](#1-mongdb)
+1. [Set Up MongoDB](#1-mongodb)
 1. [Set Up MySQL](#2-mysql)
 
-## 1. MongDB
+## 1. MongoDB
 
 Use the following command to start a MongoDB:
 ```sh

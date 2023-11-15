@@ -56,7 +56,7 @@ Splits: 53 total, 53 done (100.00%)
 presto>
 ```
 
-These are the catalogs that we set when launching the coordinator and worker containers by using the configurations
+These are the catalogs that you set when launching the coordinator and worker containers by using the configurations
 from the `./catalog` directory.
 
 - [jmx](http://prestodb.io/docs/current/connector/jmx.html): The JMX connector provides the ability to query JMX
@@ -77,7 +77,7 @@ Adding new catalogs to Presto servers is quite simple. You just need to create t
 `<presto-root>/etc/catalog` directory and provide the data source information in the property file.
 
 For the MySQL database, you can find the following content in the `./catalog-new/mysql.properties` file. It contains
-the information about the MySQL database we set up earlier.
+the information about the MySQL database you set up earlier.
 
 ```
 connector.name=mysql
@@ -88,7 +88,7 @@ connection-password=presto
 
 
 For the MongoDB, you can find the following content in the `./catalog-new/mongo.properties` file. It contains
-the information about the MongoDB we set up earlier:
+the information about the MongoDB you set up earlier:
 
 ```
 connector.name=mongodb
@@ -104,7 +104,7 @@ docker restart coordinator worker1 worker2 worker3
 ```
 
 This will restart all four containers sequentially. When the command finishes, you can run the Presto CLI to verify the
-new data sources we added.
+new data sources.
 
 ```sh
 $ docker run --rm -ti -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
