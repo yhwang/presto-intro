@@ -19,7 +19,7 @@ You can use the following command to check the logs of the MongoDB:
 docker logs presto-mongo -f
 ```
 
-The MongoDB is up and ready for use when you see the following messages:
+The MongoDB is up and ready when you see the following messages:
 ```
 {"t":{"$date":"2023-11-14T06:48:23.625+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0"}}
 {"t":{"$date":"2023-11-14T06:48:23.626+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
@@ -75,7 +75,7 @@ You can use the following command to check the logs of the MySQL server:
 docker logs presto-mysql -f
 ```
 
-The MySQL server is up and ready for use when you see the following message from the logs:
+The MySQL server is up and ready when you see the following message from the logs:
 ```
 2023-11-14T06:05:19.091785Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
 ```

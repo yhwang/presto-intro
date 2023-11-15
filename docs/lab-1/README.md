@@ -68,15 +68,16 @@ Create a docker network to be used by all of the containers, including the Prest
 ## 2. Set Up Presto Cluster
 
 ### 2.1 Presto Coordinator
-Bring up a Presto server acting as the coordinator with the following command:
+Bring up a Presto server as a coordinator by using the following command:
 ```sh
 docker run -d -p 8080:8080 -v ./conf/coordinator/config.properties:/opt/presto-server/etc/config.properties \
     -v ./conf/coordinator/jvm.config:/opt/presto-server/etc/jvm.config -v ./catalog:/opt/presto-server/etc/catalog \
     --net presto_network --name coordinator prestodb/presto:0.284
 ```
 
-This command starts a container named `coordinator` using the [prestodb/presto:0.284](https://hub.docker.com/layers/prestodb/presto/0.284/images/sha256-8ccb0476a642a13ee2a86d0660c215e9fe8fc8d1f0066cdbdea6b2e34187c248?context=explore) image with the `config.properties` and `jvm.config` configurations under the `config/coordinator` directory. Here are the settings for the coordinator:
+This command starts a container named `coordinator` using the [prestodb/presto:0.284](https://hub.docker.com/layers/prestodb/presto/0.284/images/sha256-8ccb0476a642a13ee2a86d0660c215e9fe8fc8d1f0066cdbdea6b2e34187c248?context=explore) image with the `config.properties` and `jvm.config` configurations under the `config/coordinator` directory along with the catalog settings in the `./catalog` directory. For the catalog settings, we will cover that in the `lab-3``.
 
+Here are the settings for the coordinator:
 ```text
 coordinator=true
 node-scheduler.include-coordinator=false
